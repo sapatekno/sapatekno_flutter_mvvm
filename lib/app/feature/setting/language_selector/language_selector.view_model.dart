@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sapa_traffic_counter/app/core/config.core.dart';
 import 'package:flutter_sapa_traffic_counter/app/core/view_model.core.dart';
 
-class LanguageSelectorViewModel extends ViewModelCore {
+abstract class LanguageSelectorViewModel extends ViewModelCore {
   LanguageSelectorViewModel(super.configRepository);
+
+  void setLanguage(int? id);
+}
+
+class LanguageSelectorViewModelImplementor extends ViewModelCore implements LanguageSelectorViewModel {
+  LanguageSelectorViewModelImplementor(super.configRepository);
 
   @override
   Future<void> onBuild() async {
@@ -12,7 +18,7 @@ class LanguageSelectorViewModel extends ViewModelCore {
     updateView(ViewState.content);
   }
 
-  setLanguage(int? id) {
+  void setLanguage(int? id) {
     id ??= 0;
 
     config.languageSelected = id;

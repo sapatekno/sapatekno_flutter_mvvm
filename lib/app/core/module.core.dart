@@ -23,12 +23,13 @@ class ModuleCore extends Module {
 
         /// * ViewModel Bindings
         Bind.factory((i) => ViewModelCore(i())),
-        Bind.factory((i) => FontSelectorViewModel(i())),
-        Bind.factory((i) => HomeViewModel(i())),
-        Bind.factory((i) => LanguageSelectorViewModel(i())),
-        Bind.factory((i) => ThemeSelectorViewModel(i())),
-        Bind.factory((i) => TextScaleSelectorViewModel(i())),
         Bind.factory((i) => MaterialAppCoreViewModel(i())),
+
+        Bind.factory((i) => FontSelectorViewModelImplementor(i())),
+        Bind.factory((i) => HomeViewModelImplementor(i())),
+        Bind.factory((i) => LanguageSelectorViewModelImplementor(i())),
+        Bind.factory((i) => ThemeSelectorViewModelImplementor(i())),
+        Bind.factory((i) => TextScaleSelectorViewModelImplementor(i())),
       ];
 
   @override

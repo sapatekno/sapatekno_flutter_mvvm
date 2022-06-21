@@ -1,7 +1,13 @@
 import 'package:flutter_sapa_traffic_counter/app/core/view_model.core.dart';
 
-class TextScaleSelectorViewModel extends ViewModelCore {
+abstract class TextScaleSelectorViewModel extends ViewModelCore {
   TextScaleSelectorViewModel(super.configRepository);
+
+  void setTextScale(int? id);
+}
+
+class TextScaleSelectorViewModelImplementor extends ViewModelCore implements TextScaleSelectorViewModel {
+  TextScaleSelectorViewModelImplementor(super.configRepository);
 
   @override
   Future<void> onBuild() async {
@@ -9,7 +15,8 @@ class TextScaleSelectorViewModel extends ViewModelCore {
     updateView(ViewState.content);
   }
 
-  setTextScale(int? id) async {
+  @override
+  void setTextScale(int? id) async {
     id ??= 0;
 
     config.textScaleSelected = id;

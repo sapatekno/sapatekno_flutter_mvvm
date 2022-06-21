@@ -1,7 +1,13 @@
 import 'package:flutter_sapa_traffic_counter/app/core/view_model.core.dart';
 
-class FontSelectorViewModel extends ViewModelCore {
+abstract class FontSelectorViewModel extends ViewModelCore {
   FontSelectorViewModel(super.configRepository);
+
+  void setFont(int? id);
+}
+
+class FontSelectorViewModelImplementor extends ViewModelCore implements FontSelectorViewModel {
+  FontSelectorViewModelImplementor(super.configRepository);
 
   @override
   Future<void> onBuild() async {
@@ -9,7 +15,8 @@ class FontSelectorViewModel extends ViewModelCore {
     updateView(ViewState.content);
   }
 
-  setFont(int? id) async {
+  @override
+  void setFont(int? id) async {
     id ??= 0;
 
     config.fontSelected = id;

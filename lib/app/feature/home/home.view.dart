@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_sapa_traffic_counter/app/core/stateless_view.core.dart';
 import 'package:flutter_sapa_traffic_counter/app/core/view_model.core.dart';
-import 'package:flutter_sapa_traffic_counter/app/feature/about/about.page.dart';
 import 'package:flutter_sapa_traffic_counter/app/feature/home/home.view_model.dart';
 import 'package:flutter_sapa_traffic_counter/app/shared/extension/string.extension.dart';
 import 'package:flutter_sapa_traffic_counter/app/shared/widget/app_bar.widget.dart';
@@ -64,14 +63,14 @@ class _HomeView extends StatelessViewCore<HomeViewModel> {
         buttonWidget(
           label: "project_history".tr().toTitleCase(),
           iconData: Icons.history,
-          onPressed: () => viewModel.clearPref(),
+          onPressed: null,
           margin: EdgeInsets.symmetric(horizontal: 8.r, vertical: 4.r),
           config: viewModel.config,
         ),
         buttonWidget(
           label: "about_application".tr().toTitleCase(),
           iconData: Icons.info,
-          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AboutPage())),
+          onPressed: () {},
           margin: EdgeInsets.symmetric(horizontal: 8.r, vertical: 4.r),
           backgroundColor: Colors.blue,
           textColor: Colors.white,
